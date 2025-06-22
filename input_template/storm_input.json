@@ -1,68 +1,14 @@
 {
-
-    "NUMSIMS": 1,
-    "NUMSIMYRS": 2,
-    "PTOT_SC": [0.00],
-    "PTOT_SF": [0.0],
-    "STORMINESS_SC": [-0.0],
-    "STORMINESS_SF": [0.0],
-
-
+    "NUMSIMS": 2,
+    "NUMSIMYRS": 1,
+    "SEASON_TAG": "MAM",
+    "SEED_YEAR": 2025,
+    
     "PDF_FILE": "./model_input/ProbabilityDensityFunctions.csv",
     "SHP_FILE": "./model_input/HAD_basin.shp",
     "DEM_FILE": "./model_input/HAD_wgs84.tif",
     "ZON_FILE": "./model_input/regions.shp",
-    "OUT_PATH": "./storm_output",
-    "RAIN_MAP": "./model_input/rainfall_OND.nc",
-    "NREGIONS": 4,
-    "Z_STAT": "mean",
-    "Z_CUTS": [300, 600, 1200],
-    "TACTIC": 1,
-    "WKT_OGC": [
-        "PROJCS[\"WGS84_/_Lambert_Azim_Mozambique\",",
-        "    GEOGCS[\"unknown\",",
-        "        DATUM[\"unknown\",",
-        "            SPHEROID[\"Normal Sphere (r=6370997)\",6370997,0]],",
-        "        PRIMEM[\"Greenwich\",0,",
-        "            AUTHORITY[\"EPSG\",\"8901\"]],",
-        "        UNIT[\"degree\",0.0174532925199433,",
-        "            AUTHORITY[\"EPSG\",\"9122\"]]],",
-        "    PROJECTION[\"Lambert_Azimuthal_Equal_Area\"],",
-        "    PARAMETER[\"latitude_of_center\",5],",
-        "    PARAMETER[\"longitude_of_center\",20],",
-        "    PARAMETER[\"false_easting\",0],",
-        "    PARAMETER[\"false_northing\",0],",
-        "    UNIT[\"metre\",1,",
-        "        AUTHORITY[\"EPSG\",\"9001\"]],",
-        "    AXIS[\"Easting\",EAST],",
-        "    AXIS[\"Northing\",NORTH],",
-        "    AUTHORITY[\"EPSG\",\"42106\"]]"
-      ],
-    "BUFFER": 7000.0,
-    "X_RES": 5000.0,
-    "Y_RES": 5000.0,
-    "T_RES": 30,
-    "NO_RAIN": 0.01,
-    "MIN_DUR": 20,
-    "MAX_DUR": 5760,
-    "MAXD_RAIN": 120,
-    "DISPERSE_": 0.2,
-    "SEASON_TAG": "OND",
-    "SEED_YEAR": 2024,
-    "TIME_ZONE": "Africa/Addis_Ababa",
-    "DATE_ORIGIN": "1970-01-01",
-    "RAINFMT": "u2",
-    "PRECISION": 0.002,
-    "TIMEINT": "u4",
-    "TIMEFIL": 4294967295,
-    "TIME_OUTNC": "minutes",
-    "TIME_DICT_": {
-      "seconds": 1,
-      "minutes": 0.016666666666666666,
-      "hours": 0.0002777777777777778,
-      "days": 1.1574074074074073e-05
-    },
-    "RAIN_NAME": "rain"
-
+    "TER_FILE": "./model_input/tercilesICPAC_OND_2024.shp",
+    "OUT_PATH": "./storm_output"
   }
   

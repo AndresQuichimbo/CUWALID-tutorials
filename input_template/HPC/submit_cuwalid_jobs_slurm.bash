@@ -18,19 +18,22 @@ while IFS= read -r storm_json; do
         job_name=$(basename "$dryp_json" .json)
         bash_script="bSub_runMe/dryp_${job_name}.bash"
 
-        cat <<EOF > "$bash_script"
+        # Create the bash script for DRYP
+        cat > "$bash_script" <<EOF
 #!/bin/bash
 #SBATCH --job-name=dryp_${job_name}
-#SBATCH --time=01:00:00
-#SBATCH --mem=4G
-#SBATCH --cpus-per-task=1
-#SBATCH --output=bSub_logMe/dryp_${job_name}.log
-#SBATCH --error=bSub_logMe/dryp_${job_name}.log
+#SBATCH --time=6:00:00
+#SBATCH --mem=40G
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=cuwalid
+#SBATCH --output=bSub_logMe/dryp_${job_name}.out
+#SBATCH --error=bSub_logMe/dryp_${job_name}.error
 #SBATCH --export=ALL
 
 source ~/miniconda3/bin/activate
 conda activate cwld
 
+# Run the DRYP command with the provided JSON
 python -m cuwalid.dryp "$dryp_json"
 EOF
 

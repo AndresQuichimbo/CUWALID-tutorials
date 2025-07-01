@@ -28,7 +28,7 @@ def write_bash(job_name, command, logname=None, slurm=True, memory="4G", time="0
             "#SBATCH --error=../bSub_logMe/%x.err\n",
             "\n",
             "module load miniconda3\n",
-            "source activate cwld\n",
+            "source activate test_cwld\n",
             f"{command} > ../bSub_logMe/{log_file} 2>&1\n"
         ]
     else:

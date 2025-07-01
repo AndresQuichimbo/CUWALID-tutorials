@@ -46,7 +46,7 @@ while IFS= read -r stopet_json; do
     cat > "$bash_script" <<EOF
 #!/bin/bash
 #SBATCH --job-name=stopet_${job_name}
-#SBATCH --time=6:00:00
+#SBATCH --time=10:00:00
 #SBATCH --mem=40G
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=cuwalid

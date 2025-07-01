@@ -1,5 +1,5 @@
-import sys
-sys.path.append("C:/Users/Edisson/Documents/GitHub/CUWALID")
+#import sys
+#sys.path.append("C:/Users/Edisson/Documents/GitHub/CUWALID")
 #sys.path.append("C:/Users/km19051/OneDrive - University of Bristol/Documents/GitHub/ilrt/CUWALID")
 #sys.path.append("/home/c1755103/CUWALID")
 #import cuwalid.dryp.components.DRYP_watershed as ppbasin
@@ -25,14 +25,14 @@ from cuwalid.dryp.main_DRYP import run_DRYP
 # list of models to run
 fname = [
 #"ponds/PND_input_riv.json",
-#"DynaVeg/DV_input.json",
+"DynaVeg/DV_input.json",
 #"DynaVeg/DV_input_kc.json",
 #"DynaVeg/DV_input_kc_gridded.json",
 #"Tanzania/dodoma_tlab_model_input_d19.json",
 #"abstraction/ABS_input_riv.json",
 #"/home/c1755103/HAD/HAD_IMERGcv_input_sim85_test.json",
 #"Lake/LA_input.json",
-"reservoir/LA_input_riv.json",
+#"reservoir/LA_input_riv.json",
 #"mlakes/mLA_input.json",
 #"Dams/LA_input_riv.json",
 #"GW_1D/GW_1D_input.json",

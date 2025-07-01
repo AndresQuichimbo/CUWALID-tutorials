@@ -18,13 +18,13 @@ while IFS= read -r dryp_json; do
     cat > "$bash_script" <<EOF
 #!/bin/bash
 #SBATCH --job-name=dryp_${job_name}
-#SBATCH --time=6:00:00
-#SBATCH --mem=40G
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=40G
 #SBATCH --partition=cuwalid
 #SBATCH --output=bSub_logMe/dryp_${job_name}.out
 #SBATCH --error=bSub_logMe/dryp_${job_name}.error
-#SBATCH --export=ALL
 
 source ~/miniconda3/bin/activate # Activate the conda environment
 conda activate test_cwld # check if this is the correct environment

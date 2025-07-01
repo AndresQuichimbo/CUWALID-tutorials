@@ -14,18 +14,18 @@ while IFS= read -r storm_json; do
     cat > "$bash_script" <<EOF
 #!/bin/bash
 #SBATCH --job-name=storm_${job_name}
-#SBATCH --time=6:00:00
-#SBATCH --mem=40G
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=40G
 #SBATCH --partition=cuwalid
 #SBATCH --output=bSub_logMe/storm_${job_name}.out
 #SBATCH --error=bSub_logMe/storm_${job_name}.error
-#SBATCH --export=ALL
 
 source ~/miniconda3/bin/activate # Activate the conda environment
 conda activate test_cwld # check if this is the correct environment
 
-# Run DRYP model with the provided JSON path
+# Run STORM model with the provided JSON path
 python -m cuwalid.storm.main_storm "$storm_json" > bSub_logMe/storm_${job_name}.log 2>&1
 EOF
     # Make the script executable
@@ -46,18 +46,18 @@ while IFS= read -r stopet_json; do
     cat > "$bash_script" <<EOF
 #!/bin/bash
 #SBATCH --job-name=stopet_${job_name}
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --time=10:00:00
 #SBATCH --mem=40G
-#SBATCH --ntasks-per-node=1
 #SBATCH --partition=cuwalid
 #SBATCH --output=bSub_logMe/stopet_${job_name}.out
 #SBATCH --error=bSub_logMe/stopet_${job_name}.error
-#SBATCH --export=ALL
 
 source ~/miniconda3/bin/activate # Activate the conda environment
 conda activate test_cwld # check if this is the correct environment
 
-# Run DRYP model with the provided JSON path
+# Run stoPET model with the provided JSON path
 python -m cuwalid.stopet.main_stopet_wrapper "$stopet_json" > bSub_logMe/stopet_${job_name}.log 2>&1
 EOF
     # Make the script executable

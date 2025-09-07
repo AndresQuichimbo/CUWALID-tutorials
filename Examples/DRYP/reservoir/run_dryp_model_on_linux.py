@@ -4,19 +4,20 @@
 
 # Import libraries from local repository
 import sys
+sys.path.append('/home/c1755103/testcuwalid')
 #sys.path.append('C:/Users/Edisson/Documents/GitHub/DRYPv2.0.1')
-sys.path.append('/home/andresqm/github/DRYPv2.0.1')
+#sys.path.append('/home/andresqm/github/DRYPv2.0.1')
 #sys.path.append("/home/km19051/DRYPv2.0.1")
 #from context import dryp
-from dryp.main_DRYP import run_DRYP
+from cuwalid.dryp.main_DRYP import run_DRYP
 
 #import dryp.components.DRYP_watershed as ppbasin
-import tools.DRYP_pptools as pptools
-import tools.DRYP_rrtools as rrtools
+import cuwalid.tools.DRYP_pptools as pptools
+import cuwalid.tools.DRYP_rrtools as rrtools
 
 #fname = "../Lake/input/LA_dem.asc"
 #fname_out = "../Lake/input/LA_flowdir.asc"
 #rrtools.create_raster_flowdirection_dryp(fname, fname_out, transform=False)
 #fname = "HAD_IMERGa_Lake_input_sim.dmp"
-fname = "LA_input.dmp"
+fname = "reservoir/LA_input_riv.json"
 run_DRYP(fname)

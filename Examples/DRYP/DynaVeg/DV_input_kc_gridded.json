@@ -36,6 +36,6 @@
         "path_out_uz": "DV_points.csv",
         "path_out_oz": "DV_points.csv",
         "path_output": "DynaVeg/result",
-        "path_setting": "DV_par_setting_kc_gridded.json"
+        "path_setting": "DynaVeg/DV_par_setting_kc_gridded.json"
     }
 }

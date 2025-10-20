@@ -26,7 +26,7 @@
     },
     "METEO": {
         "path_pre": "Pre_timeseries_60min_events.csv",
-        "path_pet": "Pre_60m_00_05_sin.csv",
+        "path_pet": "Test_timeseries_60min.csv",
 		"path_kc": "DV_time_series_kc_MM.nc",
 		"path_TSav": "DV_time_series_av.nc",
 		"path_lai": "DV_time_series_LAI_MM.nc"

@@ -20,6 +20,10 @@ Examples/DRYP/GW_1D/result/
 Examples/DRYP/multiaq/result/
 Examples/DRYP/ponds/result/
 Examples/DRYP/reservoir/result/
+Examples/DRYP/lake/results/
+Examples/DRYP/mk_jibiya/outputs/
+Examples/DRYP/testgrid/results/
+Examples/DRYP/vlake1d/results/
 Examples/Python/
 /__pycache__
 /.ipynb_checkpoints

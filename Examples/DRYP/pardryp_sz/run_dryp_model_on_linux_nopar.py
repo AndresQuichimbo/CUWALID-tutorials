@@ -13,6 +13,6 @@ import cuwalid.tools.DRYP_pptools as pptools
 import cuwalid.tools.DRYP_rrtools as rrtools
 
 #rrtools.create_raster_flowdirection_dryp(fname, fname_out, transform=False)
-fname = "/home/c1755103/testcuwalid/pardryp_sz/par_sz_grid_input.json"
+fname = "/home/c1755103/testcuwalid/pardryp_sz/nopar_sz_grid_input.json"
 run_parDRYP(fname)
 #run_DRYP(fname)

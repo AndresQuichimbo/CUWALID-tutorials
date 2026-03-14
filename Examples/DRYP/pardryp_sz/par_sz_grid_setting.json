@@ -1,7 +1,7 @@
 {
     "SIMULATION_PERIOD": {
         "start_date": "2000 1 1",
-        "end_date": "2000 12 31"
+        "end_date": "2000 1 10"
     },
     "TIMESTEP_SETTINGS": {
         "dt_of": "60",
@@ -14,7 +14,7 @@
     },
     "OUTPUT": {
         "output_csv": true,
-        "output_grid": true,
+        "output_grid": false,
 		"output_dt": "1M",
 		"output_dt_csv": "1D"
     },

@@ -21,6 +21,7 @@ Examples/DRYP/multiaq/result/
 Examples/DRYP/ponds/result/
 Examples/DRYP/reservoir/result/
 Examples/DRYP/lake/results/
+Examples/DRYP/mk_jibiya/
 Examples/DRYP/mk_jibiya/outputs/
 Examples/DRYP/testgrid/results/
 Examples/DRYP/vlake1d/results/
@@ -57,3 +58,4 @@ Training/Python/.ipynb_checkpoints
 Training/STORM/__pycache__
 Training/Python/__pycache__
 Training/DRYP/intro_modelling/.ipynb_checkpoints
+Training/DRYP/regional/.ipynb_checkpoints

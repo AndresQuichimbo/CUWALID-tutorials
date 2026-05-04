@@ -1,0 +1,80 @@
+{
+    "model_name": "MK_TLab_sim_t1a",
+    "path_input": "/home/c1755103/testcuwalid/mk_jibiya/",
+    "TERRAIN": {
+        "path_dem": "input/mk_dem_filled_f_aligned_clipped.asc",
+        "path_Qo": "input/MK_TLab_sim_n1m_avg_Q_ini_clipped.asc",
+        "path_fdl": "input/mk_flowdirection_agnps_clipped_landlab.asc",
+        "path_riv_decay": "null",
+        "path_mask": "null",
+        "path_riv_len": "input/mk_river_network_negativeremoved_aligned_aligned_clipped.asc",
+        "path_riv_width": null,
+        "path_of_bc_flux": "input/sw_bc_points2.csv",
+        "path_riv_elev": "input/Maradi_Katsina_DEM_3s_utm_30P_resampledto30s_aligned_clipped.asc"
+    },
+    "VEGETATION": {
+        "path_veg_kc": null,
+        "path_veg_lulc": null,
+        "path_veg_nn": null
+    },
+    "UNSATURATED": {
+        "path_uz_theta_sat": "input/mk_tlab_domain_porosity_utm_percentage_v2_aligned_clipped.asc",
+        "path_uz_theta_res": "null",
+        "path_uz_theta_awc": "input/mk_tlab_domain_awc_aligned_clipped.asc",
+        "path_uz_theta_wp": "input/mk_tlab_domain_wp_created_aligned_clipped.asc",
+        "path_uz_rootdepth": "input/mk_tlab_domain_rootdepth_mm_utm_v2_aligned_clipped.asc",
+        "path_uz_lambda": "input/mk_tlab_domain_lambda_utm_aligned_clipped.asc",
+        "path_uz_psi": "input/mk_tlab_domain_psi_s_utm_positive_mm_v2_aligned_clipped.asc",
+        "path_uz_ksat": "input/mk_tlab_domain_ks_utm_mm_perh_v2_aligned_clipped.asc",
+        "path_uz_sigmaksat": "input/mk_tlab_domain_ks_sigma_utm_mm_perh_v2_aligned_clipped.asc",
+        "path_uz_theta": "input/MK_TLab_sim_n1m_avg_tht_ini_clipped.asc",
+        "path_riv_ksat": "input/mk_tlab_domain_ks_utm_mm_perh_v2_aligned_clipped.asc"
+    },
+    "RIPARIAN": {
+        "path_rp_theta_sat": "input/mk_tlab_domain_porosity_utm_percentage_v2_aligned_clipped.asc",
+        "path_rp_theta_awc": "input/mk_tlab_domain_awc_aligned_clipped.asc",
+        "path_rp_theta_wp": "input/mk_tlab_domain_wp_created_aligned_clipped.asc",
+        "path_rp_rootdepth": "input/mk_tlab_domain_rootdepth_mm_utm_v2_aligned_clipped.asc",
+        "path_rp_lambda": "input/mk_tlab_domain_lambda_utm_aligned_clipped.asc",
+        "path_rp_psi": "input/mk_tlab_domain_psi_s_utm_positive_mm_v2_aligned_clipped.asc",
+        "path_rp_ksat": "input/mk_tlab_domain_ks_utm_mm_perh_v2_aligned_clipped.asc",
+        "path_rp_theta": "input/MK_TLab_sim_n1m_avg_tht_rp_ini_clipped.asc"
+    },
+    "SATURATED": {
+        "path_sz_mask": "null",
+        "path_sz_ksat": "input/mk_tlab_domain_Kaq_2zones_aligned_clipped.asc",
+        "path_sz_sy": "input/mk_tlab_domain_Sy_v2_aligned_clipped.asc",
+        "path_sz_wte": "input/MK_TLab_sim_n1m_avg_wte_ini_clipped.asc",
+        "path_sz_bc_flux": "null",
+        "path_sz_bc_head": "null",
+        "path_sz_bottom": "input/mk_tlab_domain_aq_bottomelevation_v2_aligned_clipped.asc",
+        "path_sz_depth": "input/mk_tlab_domain_aq_thickness_v2_aligned_clipped.asc",
+        "path_sz_type": "input/mk_tlab_domain_aquifer_type_aligned_clipped.asc"
+    },
+    "WATER_BODIES": {
+        "path_lake_depth": null,
+        "path_pnd_hmax": null,
+        "path_pnd_Amax": null,
+        "path_pnd_Vo": null
+    },
+    "METEO": {
+        "path_pre": "pre_pet/pre/YYYY.nc",
+        "path_pet": "pre_pet/pet/YYYY_daily_pet_mk_tlab_domain.nc",
+        "path_aof": "null",
+        "path_lai": null,
+        "path_savi": null,
+        "path_kc": null,
+        "path_TSOF": "sw_tsof2.csv",
+        "path_TSUZ": null,
+        "path_TSSZ": "null",
+        "Other": null
+    },
+    "OUTPUT": {
+        "path_out_sz": "/home/c1755103/testcuwalid/mk_jibiya/input/locations_ts.csv",
+        "path_out_uz": "/home/c1755103/testcuwalid/mk_jibiya/input/locations_ts.csv",
+        "path_out_oz": "/home/c1755103/testcuwalid/mk_jibiya/input/locations_ts.csv",
+        "path_output": "/home/c1755103/testcuwalid/mk_jibiya/outputs",
+        "Other": null,
+        "path_setting": "/home/c1755103/testcuwalid/mk_jibiya/inputfiles/mk_tlab_par_settings_f0_b_ini.json"
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "model_name": "MK_TLab_sim_l1f",
+    "path_input": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/",
+    "TERRAIN": {
+        "path_dem": "parameters_aligned2/dem_with_updated_lakes_meandem_f_aligned.asc",
+        "path_Qo": "outputs_f/sim_l/MK_TLab_sim_l1e_avg_Q_ini.asc",
+        "path_fdl": "parameters_aligned/mk_flowdirection_agnps_landlab_aligned.asc",
+        "path_riv_decay": "null",
+        "path_mask": "parameters_aligned/mk_tlab_domain_masked_aligned.asc",
+        "path_riv_len": "parameters_aligned/mk_river_network_jibiya_lake_f_aligned.asc",
+        "path_riv_width": "parameters_aligned/mk_river_width_with_jibiya_lakes_aligned.asc",
+        "path_of_bc_flux": "mk_jibiya/sw_bc_points2.csv",
+        "path_riv_elev": "parameters_aligned/Maradi_Katsina_DEM_3s_utm_30P_resampledto30s_aligned.asc"
+    },
+    "VEGETATION": {
+        "path_veg_kc": null,
+        "path_veg_lulc": null,
+        "path_veg_nn": null
+    },
+    "UNSATURATED": {
+        "path_uz_theta_sat": "parameters_aligned/mk_tlab_domain_porosity_utm_percentage_v2_aligned.asc",
+        "path_uz_theta_res": "null",
+        "path_uz_theta_awc": "parameters_aligned/mk_tlab_domain_awc_aligned.asc",
+        "path_uz_theta_wp": "parameters_aligned/mk_tlab_domain_wp_created_aligned.asc",
+        "path_uz_rootdepth": "parameters_aligned/mk_tlab_domain_rootdepth_mm_utm_v2_aligned.asc",
+        "path_uz_lambda": "parameters_aligned/mk_tlab_domain_lambda_utm_aligned.asc",
+        "path_uz_psi": "parameters_aligned/mk_tlab_domain_psi_s_utm_positive_mm_v2_aligned.asc",
+        "path_uz_ksat": "parameters_aligned/mk_tlab_domain_ks_utm_mm_perh_v2_aligned.asc",
+        "path_uz_sigmaksat": "parameters_aligned/mk_tlab_domain_ks_sigma_utm_mm_perh_v2_aligned.asc",
+        "path_uz_theta": "outputs_f/sim_l/MK_TLab_sim_l1e_avg_tht_ini.asc",
+        "path_riv_ksat": "parameters_aligned/mk_tlab_domain_ks_utm_mm_perh_v2_aligned.asc"
+    },
+    "RIPARIAN": {
+        "path_rp_theta_sat": "parameters_aligned/mk_tlab_domain_porosity_utm_percentage_v2_aligned.asc",
+        "path_rp_theta_awc": "parameters_aligned/mk_tlab_domain_awc_aligned.asc",
+        "path_rp_theta_wp": "parameters_aligned/mk_tlab_domain_wp_created_aligned.asc",
+        "path_rp_rootdepth": "parameters_aligned/mk_tlab_domain_rootdepth_mm_utm_v2_aligned.asc",
+        "path_rp_lambda": "parameters_aligned/mk_tlab_domain_lambda_utm_aligned.asc",
+        "path_rp_psi": "parameters_aligned/mk_tlab_domain_psi_s_utm_positive_mm_v2_aligned.asc",
+        "path_rp_ksat": "parameters_aligned/mk_tlab_domain_ks_utm_mm_perh_v2_aligned.asc",
+        "path_rp_theta": "outputs_f/sim_l/MK_TLab_sim_l1e_avg_tht_rp_ini.asc"
+    },
+    "SATURATED": {
+        "path_sz_mask": "parameters_aligned/mk_tlab_domain_masked_aligned.asc",
+        "path_sz_ksat": "parameters/mk_tlab_domain_Kaq_2zones.asc",
+        "path_sz_sy": "parameters_aligned/mk_tlab_domain_Sy_v2_aligned.asc",
+        "path_sz_wte": "outputs_f/sim_l/MK_TLab_sim_l1e_avg_wte_ini.asc",
+        "path_sz_bc_flux": "forcing/GW_synthetic_abs_points.csv",
+        "path_sz_bc_head": "parameters_aligned/mk_tlab_created_CHBC_aligned.asc",
+        "path_sz_bottom": "parameters_aligned/mk_tlab_domain_aq_bottomelevation_v2_aligned.asc",
+        "path_sz_depth": "parameters_aligned/mk_tlab_domain_aq_thickness_v2_aligned.asc",
+        "path_sz_type": "parameters/mk_tlab_domain_aquifer_type.asc"
+    },
+    "WATER_BODIES": {
+        "path_lake_depth": "parameters_aligned2/mk_tlab_domain_lakes_nodatatozero_aligned.asc",
+        "path_pnd_hmax": null,
+        "path_pnd_Amax": null,
+        "path_pnd_Vo": null
+    },
+    "METEO": {
+        "path_pre": "forcing/chirps_daily_v2/YYYY.nc",
+        "path_pet": "forcing/daily_PET/YYYY_daily_pet_mk_tlab_domain.nc",
+        "path_aof": "null",
+        "path_lai": null,
+        "path_savi": null,
+        "path_kc": null,
+        "path_TSOF": "mk_jibiya/sw_tsof2.csv",
+        "path_TSUZ": null,
+        "path_TSSZ": "null",
+        "Other": null
+    },
+    "OUTPUT": {
+        "path_out_sz": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/para/locations_for_temp_outputs_v7.csv",
+        "path_out_uz": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/para/locations_for_temp_outputs_v7.csv",
+        "path_out_oz": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/para/locations_for_temp_outputs_v7.csv",
+        "path_output": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/outputs_f/sim_l",
+        "Other": null,
+        "path_setting": "C:/Users/oshin/OneDrive - Cardiff University/CLARITY/Work_Niger+Nigeria/model/inputfiles/mk_tlab_par_settings_f0_b_ini.json"
+    }
+}

@@ -1,0 +1,35 @@
+{
+
+    "model_name": "grid_test",
+	"path_input": "testgrid/input/",
+	
+    "TERRAIN": {
+        "path_dem": "grid_dem.asc",
+		"path_mask": "grid_mask.asc",
+        "path_fdl": "grid_flowdir.asc",
+        "path_riv_len": "grid_river.asc",
+        "path_riv_width": "grid_channel_width.asc",
+        "path_riv_elev": "grid_dem.asc"
+    },
+    "SATURATED": {
+        "path_sz_wte": "grid_wte_ini.asc",
+        "path_sz_bc_head": "grid_CHB.asc",
+        "path_sz_bottom": "grid_botb.asc"
+    },
+	"WATER_BODIES": {
+        "path_lake_depth": "grid_bathymetry1.asc"
+	},
+
+    "METEO": {
+        "path_pre": "testgrid/input/pre_constant_60min.csv",
+        "path_pet": "testgrid/input/pre_constant_60min.csv"
+    },
+    
+	"OUTPUT": {
+        "path_out_sz": "testgrid/input/grid_points.csv",
+        "path_out_uz": "testgrid/input/grid_points.csv",
+        "path_out_oz": "testgrid/input/grid_points.csv",
+        "path_output": "testgrid/results",
+        "path_setting":"testgrid/grid_setting.json"
+    }
+}

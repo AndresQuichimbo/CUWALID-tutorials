@@ -1,0 +1,35 @@
+{
+
+    "model_name": "noLakes_sim_0",
+	"path_input": "lake/input/",
+	
+    "TERRAIN": {
+        "path_dem": "lakes_dem.asc",
+		"path_mask": "lakes_mask.asc",
+        "path_fdl": "LA_flowdir1.asc",
+        "path_riv_len": "LA_riv1.asc",
+        "path_riv_width": "LA_channel_width.asc",
+        "path_riv_elev": "LA_dem.asc"
+    },
+    "SATURATED": {
+        "path_sz_wte": "lakes_wte_ini.asc",
+        "path_sz_ksat": "nolakes_ksat.asc",
+        "path_sz_bc_head": "lakes_CHB.asc"
+    },
+	"WATER_BODIES": {
+        "path_lake_depth": "lakes_bathymetry1.asc"
+	},
+
+    "METEO": {
+        "path_pre": "lake/input/pre_constant_60min.csv",
+        "path_pet": "lake/input/pre_constant_60min.csv"
+    },
+    
+	"OUTPUT": {
+        "path_out_sz": "lake/input/lakes_points.csv",
+        "path_out_uz": "lake/input/lakes_points.csv",
+        "path_out_oz": "lake/input/lakes_points.csv",
+        "path_output": "lake/results",
+        "path_setting":"lake/lks_setting.json"
+    }
+}

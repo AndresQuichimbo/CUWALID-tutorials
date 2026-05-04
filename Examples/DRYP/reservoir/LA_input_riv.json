@@ -10,13 +10,13 @@
         "path_riv_elev": "LA_dem1.asc"
     },
     "SATURATED": {
-        "path_sz_wte": "Dams_1000m_avg_wte_ini.asc",
+        "path_sz_wte": "LA_wte_ini.asc",
         "path_sz_bc_head": "LA_CHB.asc",
         "path_sz_bottom": "LA_botb.asc"
     },
     "METEO": {
-        "path_pre": "Pre_60m_00_05_sin.csv",
-        "path_pet": "Pre_60m_00_05_sin.csv",
+        "path_pre": "vLA_time_series.csv",
+        "path_pet": "vLA_time_series.csv",
         "path_TSWB": "WB_abstractions1.csv"
     },
     "OUTPUT": {

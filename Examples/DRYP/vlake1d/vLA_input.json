@@ -1,0 +1,35 @@
+{
+
+    "model_name": "vLake_sim_0",
+	"path_input": "vlake1d/input/",
+	
+    "TERRAIN": {
+        "path_dem": "vlakes_dem.asc",
+		"path_mask": "vlakes_mask.asc",
+        "path_fdl": "LA_flowdir1.asc",
+        "path_riv_len": "LA_riv1.asc",
+        "path_riv_width": "LA_channel_width.asc",
+        "path_riv_elev": "LA_dem.asc"
+    },
+    "SATURATED": {
+        "path_sz_wte": "vlakes_watertable.asc",
+        "path_sz_bc_head": "vlakes_constant_head.asc",
+        "path_sz_bottom": "LA_botb.asc"
+    },
+	"WATER_BODIES": {
+        "path_lake_depth": "vlakes_bathymetry.asc"
+	},
+
+    "METEO": {
+        "path_pre": "vlake1d/input/Pre_60m_00_05_sin.csv",
+        "path_pet": "vlake1d/input/Pre_60m_00_05_sin.csv"
+    },
+    
+	"OUTPUT": {
+        "path_out_sz": "vlake1d/input/LA_points.csv",
+        "path_out_uz": "vlake1d/input/LA_points.csv",
+        "path_out_oz": "vlake1d/input/LA_points.csv",
+        "path_output": "vlake1d/results",
+        "path_setting":"vlake1d/vLA_par_setting.json"
+    }
+}

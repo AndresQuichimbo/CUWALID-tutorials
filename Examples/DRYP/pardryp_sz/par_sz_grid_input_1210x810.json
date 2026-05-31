@@ -1,0 +1,36 @@
+{
+    "model_name": "grid_test_1210x810",
+    "path_input": "pardryp_sz/input/",
+    "TERRAIN": {
+        "path_dem": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_dem_1210x810.asc",
+        "path_mask": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_mask_1210x810.asc",
+        "path_fdl": "grid_flowdir1.asc",
+        "path_riv_len": "grid_river1.asc",
+        "path_riv_width": "grid_channel_width1.asc",
+        "path_riv_elev": "grid_dem1.asc"
+    },
+    "SATURATED": {
+        "path_sz_wte": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_wte_ini_1210x810.asc",
+        "path_sz_bc_head": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_CHB_1210x810.asc",
+        "path_sz_bottom": "grid_botb.asc"
+    },
+    "WATER_BODIES": {
+        "path_lake_depth": "grid_bathymetry1.asc"
+    },
+    "METEO": {
+        "path_pre": "pardryp_sz/input/pre_constant_60min.csv",
+        "path_pet": "pardryp_sz/input/pre_constant_60min.csv"
+    },
+    "OUTPUT": {
+        "path_out_sz": "pardryp_sz/input/grid_points.csv",
+        "path_out_uz": "pardryp_sz/input/grid_points.csv",
+        "path_out_oz": "pardryp_sz/input/grid_points.csv",
+        "path_output": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/results",
+        "path_setting": "pardryp_sz/par_sz_grid_setting.json"
+    },
+    "PARALLEL": {
+        "path_subdomains_sz": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_zones_sz_1210x810.asc",
+        "path_subdomains_uz": "grid_zones_uz.asc",
+        "path_subdomains_oz": "/home/c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input/grid_zones_oz_1210x810.asc"
+    }
+}

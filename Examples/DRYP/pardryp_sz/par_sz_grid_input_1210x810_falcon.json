@@ -5,7 +5,7 @@
         "path_dem": "grid_dem_1210x810.asc",
         "path_mask": "grid_mask_1210x810.asc",
         "path_fdl": "grid_flowdir1.asc",
-        "path_riv_len": "grid_river1.asc",
+        "path_riv_len": "grid_river11.asc",
         "path_riv_width": "grid_channel_width1.asc",
         "path_riv_elev": "grid_dem1.asc"
     },

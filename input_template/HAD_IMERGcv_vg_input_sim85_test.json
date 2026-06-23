@@ -1,0 +1,69 @@
+{
+    "model_name": "HAD_test_forecasting_a",
+    "TERRAIN": {
+        "path_dem": "/home/c1755103/HAD/input/HAD_DEM_utm_mm.asc",
+        "path_Qo": "/home/c1755103/HAD/HAD_output/HAD_IMERGcu_sim83_2022_avg_Q_ini.asc",
+        "path_fdl": "/home/c1755103/HAD/input/HAD_flowdir_land_utm.asc",
+        "path_riv_decay": "/home/c1755103/HAD/input/HAD_decay_utm_v2.asc",
+        "path_mask": "/home/c1755103/HAD/input/HAD_mask_utm_m.asc",
+        "path_riv_len": "/home/c1755103/HAD/input/HAD_riv_length_utm_v2.asc",
+        "path_riv_width": "/home/c1755103/HAD/input/HAD_width_utm_v2.asc",
+        "path_riv_elev": "/home/c1755103/HAD/input/HAD_riv_elev_15pc_utm_m_sm_v3.asc"
+    },
+    "VEGETATION": {
+        "path_veg_kc": null,
+        "path_veg_lulc": null
+    },
+    "UNSATURATED": {
+        "path_uz_theta_sat": "/home/c1755103/HAD/input/HAD_theta_sat_utm_m.asc",
+        "path_uz_theta_awc": "/home/c1755103/HAD/input/HAD_theta_awc_utm.asc",
+        "path_uz_theta_wp": "/home/c1755103/HAD/input/HAD_theta_wp_utm.asc",
+        "path_uz_rootdepth": "/home/c1755103/HAD/input/HAD_rootdepth_stocker_2023_filled_factor.asc",
+        "path_uz_lambda": "/home/c1755103/HAD/input/HAD_lambdas_utm_m.asc",
+        "path_uz_psi": "/home/c1755103/HAD/input/HAD_psi_utm_m.asc",
+        "path_uz_ksat": "/home/c1755103/HAD/input/HAD_ksat_utm_zhung.asc",
+        "path_uz_theta": "/home/c1755103/HAD/HAD_output/HAD_IMERGcu_sim83_2022_avg_tht_ini.asc"
+    },
+    "RIPARIAN": {
+        "path_rp_theta_sat": "/home/c1755103/HAD/input/HAD_theta_sat_utm_m.asc",
+        "path_rp_theta_awc": "/home/c1755103/HAD/input/HAD_theta_awc_utm.asc",
+        "path_rp_theta_wp": "/home/c1755103/HAD/input/HAD_theta_wp_utm.asc",
+        "path_rp_rootdepth": "/home/c1755103/HAD/input/HAD_rootdepth_utm_m.asc",
+        "path_rp_lambda": "/home/c1755103/HAD/input/HAD_lambdas_utm_m.asc",
+        "path_rp_psi": "/home/c1755103/HAD/input/HAD_psi_utm_m.asc",
+        "path_rp_ksat": "/home/c1755103/HAD/input/HAD_ksat_utm_m.asc",
+        "path_rp_theta": "/home/c1755103/HAD/HAD_output/HAD_IMERGcv_sim83_2022_avg_tht_rp_ini.asc"
+    },
+    "SATURATED": {
+        "path_sz_ksat": "/home/c1755103/HAD/input/HAD_ksat_D2E_ksat_sim_85_utm.asc",
+        "path_sz_sy": "/home/c1755103/HAD/input/HAD_D2E_sy_ghlymps_utm_mmm.asc",
+        "path_sz_wte": "/home/c1755103/HAD/HAD_output/HAD_IMERGcu_sim83_2022_avg_wte_ini.asc",
+        "path_sz_bc_head": "/home/c1755103/HAD/input/HAD_CHBm_utm.asc",
+        "path_sz_bottom": "/home/c1755103/HAD/input/HAD_botb.asc",
+        "path_sz_depth": "/home/c1755103/HAD/input/HAD_BDdepth_utm_m_sm_v2.asc",
+        "path_sz_bdd": "/home/c1755103/HAD/input/HAD_BDdepth_utm_m_sm_v2.asc"
+    },
+    "METEO": {
+        "path_pre": "/share/home/c1755103/dataset/IMERG/YYYY/IMERG_YYYY-MM.nc",
+        "path_pet": "/share/home/c1755103/dataset/ERA/HAD_pet_H_YYYY.nc",
+	"path_lai": "/share/home/c1755103/dataset/LAI/LAI_MM.nc",
+	"path_kc": "/share/home/c1755103/dataset/kc/kc_MM.nc",
+	"path_TSav": "/share/home/c1755103/dataset/vegetation_fraction/VegetationFraction.nc"
+    },
+	"WATER_BODIES": {
+      "path_lake_depth": "/home/c1755103/HAD/input/HAD_globathymetry_utm.asc",
+      "path_pnd_hmax": "/home/c1755103/HAD/input/HAD_ali2024_ponds_max_depth_utm_no_lakes.asc",
+      "path_pnd_Amax": "/home/c1755103/HAD/input/HAD_ali2024_ponds_max_area_utm_no_lakes.asc"
+	},
+    "INTERCEPTION": {
+       "path_veg_hs_extinction_depth": "/home/c1755103/HAD/input/HAD_rootdepth_stocker_2023_filled.asc"
+    },
+    "OUTPUT": {
+        "path_out_sz": "/home/c1755103/HAD/input/HAD_soil_location.csv",
+        "path_out_uz": "/home/c1755103/HAD/input/HAD_soil_location.csv",
+        "path_out_oz": "/home/c1755103/HAD/input/HAD_stremflow_station_all.csv",
+        "path_output": "/home/c1755103/HAD/HAD_output",
+        "path_setting": "/home/c1755103/HAD/HAD_IMERGcv_vg_par_setting_0_test.json",
+        "path_projection": "/home/c1755103/HAD/HAD_projection.dwapm"
+    }
+}

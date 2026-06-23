@@ -1,0 +1,36 @@
+{
+    "model_name": "grid_test_1210x810",
+    "path_input": "/shared/home1/c.c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/input",
+    "TERRAIN": {
+        "path_dem": "grid_dem_1210x810.asc",
+        "path_mask": "grid_mask_1210x810.asc",
+        "path_fdl": "grid_flowdir1.asc",
+        "path_riv_len": "grid_river1.asc",
+        "path_riv_width": "grid_channel_width1.asc",
+        "path_riv_elev": "grid_dem1.asc"
+    },
+    "SATURATED": {
+        "path_sz_wte": "grid_wte_ini_1210x810.asc",
+        "path_sz_bc_head": "grid_CHB_1210x810.asc",
+        "path_sz_bottom": "grid_botb.asc"
+    },
+    "WATER_BODIES": {
+        "path_lake_depth": "grid_bathymetry1.asc"
+    },
+    "METEO": {
+        "path_pre": "pre_constant_60min.csv",
+        "path_pet": "pre_constant_60min.csv"
+    },
+    "OUTPUT": {
+        "path_out_sz": "grid_points.csv",
+        "path_out_uz": "grid_points.csv",
+        "path_out_oz": "grid_points.csv",
+        "path_output": "/shared/scratch/SCWF00176/test/pardryp_sz/results",
+        "path_setting": "/shared/home1/c.c1755103/gitremote/CUWALID-tutorials/Examples/DRYP/pardryp_sz/par_sz_grid_setting.json"
+    },
+    "PARALLEL": {
+        "path_subdomains_sz": "grid_zones_sz_1210x810.asc",
+        "path_subdomains_uz": "1grid_zones_uz_1210x810.asc",
+        "path_subdomains_oz": "grid_zones_oz_1210x810.asc"
+    }
+}

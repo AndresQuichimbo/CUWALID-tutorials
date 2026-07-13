@@ -59,3 +59,5 @@ Training/STORM/__pycache__
 Training/Python/__pycache__
 Training/DRYP/intro_modelling/.ipynb_checkpoints
 Training/DRYP/regional/.ipynb_checkpoints
+Training/Datasets/AQ_credentials.py
+Training/Datasets/__pycache__

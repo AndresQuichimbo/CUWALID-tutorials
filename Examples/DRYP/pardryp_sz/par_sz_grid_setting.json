@@ -1,7 +1,7 @@
 {
     "SIMULATION_PERIOD": {
         "start_date": "2000 1 1",
-        "end_date": "2004 12 31"
+        "end_date": "2000 1 4"
     },
     "TIMESTEP_SETTINGS": {
         "dt_of": "60",

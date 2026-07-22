@@ -61,3 +61,4 @@ Training/DRYP/intro_modelling/.ipynb_checkpoints
 Training/DRYP/regional/.ipynb_checkpoints
 Training/Datasets/AQ_credentials.py
 Training/Datasets/__pycache__
+Training/Datasets/processing/*.tmp

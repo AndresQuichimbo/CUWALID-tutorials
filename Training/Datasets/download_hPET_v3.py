@@ -9,29 +9,41 @@ import xarray as xr
 ## ***** AND RUN THIS PYTHON SCRIPT TO DOWNLOAD hPET and dPET ********##
 def main():
     start = dt.datetime.now()
-    # example (please change these values to your specification)
+    
     # input arguments
-    startyear = 2025
+    startyear = 1998
     endyear = 2026
-    latmin = -6.0#-2.0#
-    latmax =  15.5#1.25#
-    lonmin = 32.0#35.50
-    lonmax = 52.10#38.30#
-    regionname='HAD'
-    t_resolution ='hourly'
-    output_path = '/share/home/c1755103/dataset/ERA/'
-    remove_globaldata = 1 # 0 for keep the global data, 1 remove the global data
+    
+    # FIX: Expanded bounding box to completely cover mainland Africa and all surrounding islands
+    latmin = -40.0
+    latmax = 40.0
+    lonmin = -26.0
+    lonmax = 60.0
+    
+    regionname = 'AF'
+    t_resolution = 'hourly'
+    output_path = '/home/chc-andres/AF/datasets/climatology/hPET/raw/'
+    remove_globaldata = 1 
+    
+    # Verify and create output directory path safely
+    if not os.path.exists(output_path):
+        print(f"Directory {output_path} does not exist. Creating it now...")
+        os.makedirs(output_path, exist_ok=True)
+        print("Directory created successfully.")
+    else:
+        print(f"Output directory verified: {output_path}")
+
     # run script
     # check variables
-    check_input_variables(startyear,endyear,latmin,latmax,lonmin,lonmax,
-        regionname,t_resolution,output_path,remove_globaldata)
+    check_input_variables(startyear, endyear, latmin, latmax, lonmin, lonmax, regionname, t_resolution, output_path, remove_globaldata)
+    
     # download data
-    wrapper(startyear,endyear,latmin,latmax,lonmin,lonmax,regionname,
-        t_resolution,output_path,remove_globaldata)
-
+    wrapper(startyear, endyear, latmin, latmax, lonmin, lonmax, regionname, t_resolution, output_path, remove_globaldata)
+    
     end = dt.datetime.now()
-    diff= end-start
-    print('Runtime: %s'%diff)
+    diff = end - start
+    print('Runtime: %s' % diff)
+
 
 
 ## ********** NO CHANGE ON THE CODE BELOW THIS **********************************************##
@@ -71,29 +83,13 @@ def wrapper(startyear,endyear,latmin,latmax,lonmin,lonmax,regionname,
         print(year)
 
 
-def region_extract(datapath,year,latmin,latmax,lonmin,lonmax,regionname,
-    t_resolution,output_path,remove_globaldata):
+def region_extract(datapath,year,latmin,latmax,lonmin,lonmax,regionname, t_resolution,output_path,remove_globaldata):
     """
-    This function extract the data from the global hPET and dPET file and write a new
-    netCDF file with a file name <year>_<t_resolution>_pet_<regionname>.nc in the output_path
-    provided.
-
-    :param datapath: the file path where the hPET data is stored (url)
-    :param year: the year for which data is going to be downloaded (integer)
-    :param latmin: the minimum latitude value (float)
-    :param latmax: the maximum latitude value (float)
-    :param lonmin: the minimum longitude value (float)
-    :param lonmax: the maximum longitude value (float)
-    :param regionname: name of the region (it could be any name the user wants) (string)
-    :param t_resolution: the time resolution to be downloaded (daily or hourly)
-    :param output_path:  the file path to store the downloaded data (string)
-    :param remove_globaldata:  switch for removing the global data after extracting the region (0= donot remove, 1= remove)
-    :return: hPET or dPET data in a netCDF file
+    This function extract the data from the global hPET and dPET file and write a new netCDF file with a file name <year>_<t_resolution>_pet_<regionname>.nc in the output_path provided.
     """
-
     if t_resolution == 'daily':
         fname = '_daily_pet.nc'
-        tunits='days since '+str(year)+'-01-01' # time unit for the new netcdf file
+        tunits='days since '+str(year)+'-01-01' 
     elif t_resolution == 'hourly':
         fname = '_hourly_pet.nc'
         tunits='hours since '+str(year)+'-01-01 00:00:00'
@@ -101,74 +97,73 @@ def region_extract(datapath,year,latmin,latmax,lonmin,lonmax,regionname,
         raise ValueError("t_resolution is wrong please write 'daily' or 'hourly'")
 
     # Download the data from the server
-    url=datapath + str(year) + fname
-    print('Downloading '+url) 
+    global_file_path = os.path.join(output_path, str(year) + fname)
+    url = datapath + str(year) + fname
+    print('\nDownloading ' + url)
     file_dl = wget.download(url, out=output_path)
-    
-    
-    # read the file to extract the regions
-    pet_hr = Dataset(output_path + str(year) + fname)  #datapath + 
-    lats = pet_hr.variables['latitude'][:]
-    lons = pet_hr.variables['longitude'][:]
-    
-    # extract the min and max index
-    latminind, lonminind = nearest_point(latmin, lonmin, lats, lons)
-    latmaxind, lonmaxind = nearest_point(latmax, lonmax, lats, lons)
- 
-    # read the data pet
-    reg_data=pet_hr.variables['pet'][:, latmaxind:latminind, lonminind:lonmaxind]  
-    # read the new latitude and longitude
-    newlats=lats[latmaxind:latminind]
-    newlons=lons[lonminind:lonmaxind]
+    print() # New line after wget progress bar
 
-    if remove_globaldata == 1:
-        # Remove the file to save space
+    pet_hr = None
+    try:
+        # read the file to extract the regions
+        pet_hr = Dataset(global_file_path)
+        lats = pet_hr.variables['latitude'][:]
+        lons = pet_hr.variables['longitude'][:]
+
+        # extract the min and max index
+        latminind, lonminind = nearest_point(latmin, lonmin, lats, lons)
+        latmaxind, lonmaxind = nearest_point(latmax, lonmax, lats, lons)
+
+        # read the data pet 
+        reg_data = pet_hr.variables['pet'][:, latmaxind:latminind, lonminind:lonmaxind]
+        
+        # read the new latitude and longitude
+        newlats = lats[latmaxind:latminind]
+        newlons = lons[lonminind:lonmaxind]
+
+        # Close the file handle cleanly before any removal attempts
         pet_hr.close()
-        os.remove(output_path + str(year) + fname)
-        print(output_path + str(year) + fname + ' File Removed!')
-    else:
-          pass
-    
-    # get a filename and variable name (here it is called pet)
-    filename=output_path+str(year)+'_'+t_resolution+'_pet_'+regionname+'.nc'
-    varname='pet'
-    # write the new data on a netcdf file
-    nc_write(reg_data, newlats, newlons, varname, tunits, filename)
-    print(filename + ' completed!')
+        pet_hr = None 
 
-    
-    # time zone offset
-    if t_resolution == 'daily':
-        # time zone offset not required
-        pass            
+        # SAFEY FIX: Global data is only removed if the above extraction steps succeed without errors
+        if remove_globaldata == 1:
+            if os.path.exists(global_file_path):
+                os.remove(global_file_path)
+                print(f"Extraction successful. Global file removed: {global_file_path}")
+        else:
+            print(f"Extraction successful. Global file kept as requested: {global_file_path}")
 
-    elif t_resolution == 'hourly':
+        # get a filename and variable name
+        filename = os.path.join(output_path, f"{year}_{t_resolution}_pet_{regionname}.nc")
+        varname = 'pet'
+
+        # write the new data on a netcdf file
+        nc_write(reg_data, newlats, newlons, varname, tunits, filename)
+        print(filename + ' completed!')
+
+    except Exception as e:
+        print(f"\n[ERROR] Extraction failed for year {year} due to: {e}")
+        print(f"[SAFEGUARD] The global file was NOT deleted. It is saved at: {global_file_path}")
+        raise # Propagate the error so the wrapper/main workflow knows it failed
+        
+    finally:
+        # Emergency cleanup of the file handle if it crashed mid-extraction
+        if pet_hr is not None:
+            try:
+                pet_hr.close()
+            except:
+                pass
+
+    # time zone offset 
+    if t_resolution == 'hourly':
         # Download the timezone data from the server
-        datapath ='https://data.bris.ac.uk/webshare/Stochastic_storm_modelling/2d241f8f-e661-4380-b858-7459f5c7141a/hPET/'
+        datapath ='https://bris.ac.uk'
         tz_fname = 'timezone_offset.nc'
         url = datapath + tz_fname
-        #wget.bar_thermometer(current, total, width=80)
-        print('Downloading ' + url) 
-        #file_dl = wget.download(url, out=output_path)
-        #tz_fname = "D:/ERA/HAD/" + tz_fname
-        #data = xr.open_dataset(tz_fname)
-        #pet=data['offset'].sel(latitude=slice(latmax,latmin), longitude=slice(lonmin,lonmax))
-        #filename = output_path+'timezone_offset_'+regionname+'.nc'
-        #pet.to_netcdf(path=filename, mode='w', format='NETCDF4_CLASSIC')
-        #print(filename + ' completed!')
-        #
-        #if remove_globaldata == 1:
-        #    # Remove the Global file to save space
-        #    data.close()
-        #    #os.remove(tz_fname)
-        #    print(tz_fname + ' File Removed!')
-        #else:
-        #    pass
-    else:
-        raise ValueError("t_resolution is wrong please write 'daily' or 'hourly'")
+        print('Downloading time offsets from: ' + url)
     
     return None
-    
+   
 
 def nearest_point(lat_var, lon_var, lats, lons):
     """

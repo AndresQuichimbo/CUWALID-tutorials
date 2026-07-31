@@ -51,6 +51,6 @@ factor = 1.0
 df = pd.DataFrame(data, columns=[f"col{i+1}" for i in range(m)])
 
 # Save the DataFrame to a CSV file named "random_data.csv". The CSV file will contain the generated random data, with column names as headers.
-path_spatial_paramters = GLOBAL_PATH + "AF_spatial_parameter_sets_file.csv"
+path_spatial_paramters = GLOBAL_PATH + "AF_spatial_parameter_sets.csv"
 df.to_csv(path_spatial_paramters, index=False)
 print(f"Random data saved to {path_spatial_paramters}.")

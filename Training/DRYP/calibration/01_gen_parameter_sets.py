@@ -48,11 +48,9 @@ label_model = df["model"].unique()
 # loop through each model and generate parameter sets
 for ilabel_model in label_model:
 	
-	# Read CSV file
-	#df = pd.read_csv(fname)
-	
-	# path output
-	path_output = fname.split('.')[0] + '_' + 'sets.csv'
+	# path output file
+	#path_output = fname.split('.')[0] + '_' + 'sets.csv'
+	path_output = GLOBAL_PATH + ilabel_model + '_random_parameter_sets.csv'
 
 	## input file
 	#df = df.groupby(['model'])#.reset_index()
